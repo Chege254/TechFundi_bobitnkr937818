@@ -1,0 +1,4 @@
+[console_scripts]
+pip-faster = pip_faster:main
+venv-update = venv_update:main
+

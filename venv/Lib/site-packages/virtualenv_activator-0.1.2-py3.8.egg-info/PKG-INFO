@@ -1,0 +1,106 @@
+Metadata-Version: 1.1
+Name: virtualenv-activator
+Version: 0.1.2
+Summary: A better activate script for Python's virtualenv
+Home-page: http://github.com/jnrbsn/virtualenv-activator
+Author: Jonathan Robson
+Author-email: jnrbsn@gmail.com
+License: MIT
+Description: ====================
+        virtualenv-activator
+        ====================
+        
+        The default activate script for Python's `virtualenv <http://www.virtualenv.org/>`_ had some
+        problems that bugged me:
+        
+        - It doesn't work with ``virtualenv --relocatable`` so you can't move or rename your virtual
+          environment directory.
+        - I wanted an easy way to modify the shell environment (manually or automatically) inside a virtual
+          environment and have it restored when I deactivate it.
+        - Some other stuff I can't remember.
+        
+        This package provides a replacement activate script that automatically...
+        
+        - makes your virtual environment relocatable and keeps it that way even when you install new stuff
+          (caveat: don't move or rename your virtual environment while it's activated).
+        - sources an optional ``etc/environment.sh`` file where you can modify your shell environment every
+          time your virtual environment is activated.
+        - restores your shell environment upon deactivation to the state it was in before you activated.
+        
+        Example
+        -------
+        
+        Create a new virtual environment, install ``virtualenv-activator`` inside it, and then activate it
+        using the ``etc/activate.sh`` script.
+        
+        ::
+        
+            $ cd /path/to/my_code
+            $ virtualenv venv
+            $ venv/bin/pip install virtualenv-activator
+            $ . venv/etc/activate.sh
+            (my_code) $
+        
+        Deactivate as normal...
+        
+        ::
+        
+            (my_code) $ deactivate
+        
+        Well, it's not as normal as it looks. There's some magic happening under the hood. Try setting an
+        environment variable in the ``etc/environment.sh`` file (this file doesn't exist by default) in your
+        virtual environment, but also set the same variable to a different value while you're outside the
+        virtual environment, and then watch what happens the variable as you activate and deactivate the
+        environment.
+        
+        ::
+        
+            $ echo 'export MY_VAR="inside venv"' > venv/etc/environment.sh
+            $ export MY_VAR="outside venv"
+            $ echo $MY_VAR
+            outside venv
+            $ . venv/etc/activate.sh
+            (my_code) $ echo $MY_VAR
+            inside venv
+            (my_code) $ export MY_VAR="manually set"
+            (my_code) $ echo $MY_VAR
+            manually set
+            (my_code) $ deactivate
+            $ echo $MY_VAR
+            outside venv
+            $ . venv/etc/activate.sh
+            (my_code) $ echo $MY_VAR
+            inside venv
+        
+        Basically, you can put pretty much anything bash related (variables, aliases, functions, etc.) in
+        the ``etc/environment.sh`` script and it will only exist when your virtual environment is activated.
+        
+        **NOTE:** You may have noticed in the example above that the parent directory's basename was used in
+        my prompt instead of the basename of the virtual environment directory itself. It does this when you
+        name your virtual environment something generic like ``venv``, in which case it wouldn't really be
+        very informative to have that in your prompt. It uses this regular expression to decide if the name
+        is "generic": ``^\.?v(irtual)?env$``
+        
+        Simple Mode
+        -----------
+        
+        Simple mode is enabled via the ``VIRTUALENV_ACTIVATOR_SIMPLE`` environment variable. When this
+        variable is set, the activator doesn't try to restore your environment to its previous state. It
+        doesn't even provide a ``deactivate`` function. This is sometimes more desirable when running a
+        daemon for instance. Here's an example of a bash script you might write to wrap a daemon written in
+        Python so that the virtual environment is automatically activated for the daemon:
+        
+        ::
+        
+            #!/bin/bash
+            export VIRTUALENV_ACTIVATOR_SIMPLE=1
+            . /path/to/venv/etc/activate.sh
+            my_daemon "$@"
+        
+Keywords: virtualenv
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container  col-md-12">
+        <div class="card text-center">
+            <div class="card-header">
+                <h3>{{ contact_tracing.name}} {{ contact_tracing.phone}} Response</h3>
+                <small>Contact Tracing Response by {{ contact_tracing.name}} on {{contact_tracing.create_date}}</small>
+                <hr>
+                <div class="card-text">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-primary">Full Name</th>
+                            <th scope="col" class="text-primary">Age</th>
+                            <th scope="col" class="text-primary">Phone Number</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ contact_tracing.name}}</td>
+                            <td>{{ contact_tracing.age}} Years Old</td>
+                            <td>{{ contact_tracing.phone}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-primary">Symptoms</th>
+                            <th scope="col" class="text-primary">When Did You Start Having These Symptoms</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ contact_tracing.symptoms}}</td>
+                            <td>{{ contact_tracing.symptops_started}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-primary">Have You Been Close To Someone With Symptoms</th>
+                            <th scope="col" class="text-primary">Any Chronic Medical Condition - Name Them</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ contact_tracing.closeness}}</td>
+                            <td>{{ contact_tracing.other_medical_issues}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-primary">How Many Are You In Your Family Including You</th>
+                            <th scope="col" class="text-primary">Is Anyone In The Home Experiencing Any Of The Symptoms As You</th>
+                            <th scope="col" class="text-primary">Did You Travel Any Recently And Where</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ contact_tracing.family_members}}</td>
+                            <td>{{ contact_tracing.any_recent_travel}}</td>
+                            <td>{{ contact_tracing.same_symptoms}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

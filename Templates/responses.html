@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+        <div class="card">
+            <div class="card-header">
+                    <h1>Responses</h1>
+            </div>
+            <div class="card-body">
+                    <ul class="list-group">
+                        {% for contact_tracings in contact_tracings %}
+                          <li class="list-group-item"><a href="contact_tracings/{{contact_tracings.id}}">{{contact_tracings.name }}  {{contact_tracings.phone }} Recorded Date -  {{contact_tracings.create_date }} </a></li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+

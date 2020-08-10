@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+auto_activenv.egg-info/PKG-INFO
+auto_activenv.egg-info/SOURCES.txt
+auto_activenv.egg-info/dependency_links.txt
+auto_activenv.egg-info/entry_points.txt
+auto_activenv.egg-info/requires.txt
+auto_activenv.egg-info/top_level.txt
+src/__init__.py
+src/main.py
+src/script.py

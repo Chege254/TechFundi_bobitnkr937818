@@ -1,0 +1,3 @@
+[console_scripts]
+block-hosts = block:cli
+

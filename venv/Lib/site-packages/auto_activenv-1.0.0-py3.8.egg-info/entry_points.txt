@@ -1,0 +1,3 @@
+[console_scripts]
+activenv = src.main:install
+

@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: venv-update
+Version: 3.2.4
+Summary: quickly and exactly synchronize a large project's virtualenv with its requirements
+Home-page: https://github.com/Yelp/venv-update
+Author: Buck Evan
+Author-email: buck@yelp.com
+License: MIT
+Keywords: pip,virtualenv
+Platform: a
+Platform: l
+Platform: l
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: System :: Archiving :: Packaging
+Classifier: Operating System :: Unix
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Requires-Dist: pip (<=18.1,>=10.0.0)
+Requires-Dist: wheel (<0.34.0,>0.25.0)
+Requires-Dist: setuptools (>=0.8.0)
+
+UNKNOWN
+
+

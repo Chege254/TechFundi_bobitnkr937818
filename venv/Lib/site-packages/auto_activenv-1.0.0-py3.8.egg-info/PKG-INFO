@@ -1,0 +1,31 @@
+Metadata-Version: 1.0
+Name: auto-activenv
+Version: 1.0.0
+Summary: CLI to install script that automaticallyactivates virtual environments
+Home-page: https://github.com/connormullett/auto-activenv
+Author: Connor Mullett
+Author-email: UNKNOWN
+License: MIT
+Description: 
+        # Auto Activenv
+        
+        Python package to automatically activate virtual environments when installed
+        Compatible with Python2 and Python3.5+
+        
+        ## Disclaimers
+        - This package is NOT compatible with Windows
+        - This package (as of right now) will only work if you name your virtual
+        environments `venv`
+        
+        ## Usage
+        - `pip install auto-activenv`
+        - `activenv --help` for options
+        - Once installed, it is safe to remove the CLI `pip uninstall auto-activenv`
+        
+        ## TODO's
+        - Change name of virtualenvs with option or use regex to determine virtualenvs
+        - Install detection
+        
+        
+Keywords: virtualenv venv virtual environment automation sandbox
+Platform: UNKNOWN

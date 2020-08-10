@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: venv-tools
+Version: 0.2.2
+Summary: A bunch of tools for using venvs (and virtualenvs) from python.
+Home-page: https://venv-tools.readthedocs.io/
+Author: James Tocknell
+Author-email: aragilar@gmail.com
+License: BSD
+Description: |Documentation Status| |Build Status| |Coverage Status|
+        
+        venv_tools is a collection of tools for managing python virtual environments.
+        
+        The advantages of venv_tools are:
+        
+        * Almost no dependencies
+        * Simple
+        * Extensible
+        
+        .. |Documentation Status| image:: https://readthedocs.org/projects/venv_tools/badge/?version=latest
+           :target: http://venv_tools.readthedocs.org/en/latest/?badge=latest
+        .. |Build Status| image:: https://travis-ci.org/aragilar/venv_tools.svg?branch=master
+           :target: https://travis-ci.org/aragilar/venv_tools
+        .. |Coverage Status| image:: https://codecov.io/github/aragilar/venv_tools/coverage.svg?branch=master
+           :target: https://codecov.io/github/aragilar/venv_tools?branch=master
+        
+Keywords: virtualenv venv
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Shells
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
